@@ -1,0 +1,1 @@
+C:/Users/Nisanur/Documents/yzm379-devamsizlik-harness/AGENTS.md

@@ -1,0 +1,6 @@
+﻿.bundle/
+vendor/
+tmp/
+*.log
+.DS_Store
+Thumbs.db

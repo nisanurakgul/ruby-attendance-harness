@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "minitest/autorun"
+
+root = File.expand_path("..", __dir__)
+expected_version = File.read(File.join(root, ".ruby-version")).strip
+unless RUBY_VERSION == expected_version || RUBY_VERSION.start_with?("#{expected_version}.")
+  warn "Ruby #{expected_version} gerekli; çalışan sürüm #{RUBY_VERSION}."
+  exit 1
+end
+
+test_files = Dir.glob(File.join(root, "test", "**", "*_test.rb")).sort
+if test_files.empty?
+  warn "test/ altında Minitest dosyası bulunamadı."
+  exit 1
+end
+
+test_files.each { |file| require file }
