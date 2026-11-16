@@ -16,6 +16,7 @@ Asistan `a_kosusu/devamsizlik_kontrol.rb` dosyasını oluşturduğunu ve `ruby d
 | İlk yanıtta veri dosyası arandı; kullanıcı Ruby uygulaması istediğini açıklamak zorunda kaldı. | `AGENTS.md` mimariyi ve sınıfları açıkça tanımlar; B testi gerekli sınıfları doğrular. |
 | A kodunda `Ogrenci` modeli ve `Ogrenci` nesnesi üstünden çalışan kural denetimi yok. | `AGENTS.md` Ogrenci ve DevamsizlikKontrol sınıflarını zorunlu kılar; B testleri denetleyicinin öğrenci nesnesini kullandığını doğrular. |
 | A kodundaki tek eşik yüzde 30'dur; 2/3/4 devamsızlık kuralları bulunmuyor. | `AGENTS.md` eşikleri sabitler; B testi 2, 3 ve 4 için bütün kuralları doğrular. |
+| A uygulamasındaki `siniri_asti?` metodu `oran > 30.0` kullanır. Tam 3 devamsızlık / 10 ders = %30 olduğundan, bu sınır durumu yanlış biçimde “SINIR İÇİNDE” olarak sınıflandırılır. | Kalıcı kural `riskli?` için `devamsizlik >= 3` olmalıdır. B regresyon testi: `test_exactly_three_absences_is_risky`. |
 | A Koşusu için doğrulanabilir test/çalıştırma çıktısı kaydedilmemiş. | B'de `bin/kontrol` ve Minitest kullanılır; bu kanıt dosyasında A için eksik çıktı açıkça belirtilir. |
 
 ## Ölçüm verisi
